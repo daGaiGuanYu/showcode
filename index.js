@@ -30,18 +30,25 @@ function share() {
   alert('链接已复制到剪切板')
 }
 
-
 // 读取分享的内容
 let search = location.search
 search = search.split('&js=')
-let js = unescape(search[1] || '')
+let js = uuuunescape(search[1] || '')
 search = search[0].split('&css=')
-let css = unescape(search[1] || '')
+let css = uuuunescape(search[1] || '')
 search = search[0].split('?html=')
-let html = unescape(search[1] || '')
+let html = uuuunescape(search[1] || '')
 if(html || css || js) {
   $html.value = html
   $css.value = css
   $js.value = js
   sync(html, css, js)
+}
+
+// 工具
+function uuuunescape(str) { // 有些网站会对链接的参数值进行 escape
+  let result = unescape(str)
+  return result == str
+    ? result
+    : uuuunescape(result)
 }
