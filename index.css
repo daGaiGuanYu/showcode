@@ -1,0 +1,45 @@
+html, body {
+  padding: 0;
+  margin: 0;
+}
+body {
+  display: flex;
+  height: 100vh;
+}
+textarea, iframe {
+  border: none;
+  outline: none;
+  box-sizing: border-box;
+}
+.code {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.block {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+label {
+  padding: .5em 1em;
+  background: #eee;
+}
+textarea {
+  padding: .5em 1em;
+  flex: 1;
+  display: block;
+  resize: none;
+}
+iframe {
+  border-left: 1px solid #eee;
+}
+button {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+}
+.show {
+  flex: 1;
+}
