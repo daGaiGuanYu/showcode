@@ -35,7 +35,7 @@ textarea {
 iframe {
   border-left: 1px solid #eee;
 }
-button {
+.button {
   position: absolute;
   bottom: 1rem;
   right: 1rem;
