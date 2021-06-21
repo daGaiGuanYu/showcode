@@ -6,25 +6,43 @@ body {
   display: flex;
   height: 100vh;
 }
-textarea, iframe {
+textarea, iframe, div {
   border: none;
   outline: none;
   box-sizing: border-box;
 }
 .code {
   flex: 1;
-  display: flex;
-  flex-direction: column;
   position: relative;
+  background: #f6f6f6;
 }
 .block {
-  flex: 1;
+  height: 33%;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
+  transition: height ease .3s;
+}
+.block:not(:first-child) {
+  border-top: 1px solid #e6e6e6;
 }
 label {
-  padding: .5em 1em;
+  padding-left: 1em;
+  line-height: 2.5;
   background: #eee;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  user-select: none;
+}
+label div {
+  width: 2.5rem;
+  text-align: center;
+  transition: all .3s;
+  transform: rotate(90deg) scale(1, 1.5);
+}
+label div.collapse {
+  transform: rotate(0) scale(1, 1.5);
 }
 textarea {
   padding: .5em 1em;
@@ -33,7 +51,7 @@ textarea {
   resize: none;
 }
 iframe {
-  border-left: 1px solid #eee;
+  border-left: 1px solid #e6e6e6;
 }
 .button {
   position: absolute;
